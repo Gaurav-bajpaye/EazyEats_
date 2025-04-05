@@ -4,7 +4,9 @@ import axios from "axios";
 export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
-  const url = process.env.REACT_APP_BACKEND_URL;
+  console.log("StoreContextProvider", import.meta.env.VITE_API_BASE_URL);
+  const url = import.meta.env.VITE_API_BASE_URL;
+  console.log("api   cddvdcx", url);
   const [food_list, setFoodList] = useState([]);
   const [cartItems, setCartItems] = useState({});
   const [token, setToken] = useState("");
